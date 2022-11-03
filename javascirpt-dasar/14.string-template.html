@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string template</title>
+</head>
+<body>
+    <script>
+        // string template bisa mensubsitusi data dari luar string ke dalam string.
+        // seperti mengambil data variable, atau bahkan melakukan operasi matematika
+        // menggukan ` backtick bukan petik satu ' atau dua "
+
+
+        const name = "afif wijaya";
+
+        const template = `name : ${name}`;
+
+        console.info(template);
+
+        const fistname = "afif";
+        const lastname = "wijaya";
+
+        const fullname =  `fullname : ${fistname} ${lastname}`;
+
+        console.log(fullname);
+        const value = 80;
+        const templateExpression = `name : ${name}, lulus : ${value > 75}`;
+        console.info(templateExpression);
+    </script>
+</body>
+</html>

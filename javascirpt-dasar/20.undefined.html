@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>undefined</title>
+</head>
+
+<body>
+    <script>
+        // undefined = variable yang belum di definisikan
+
+        // let name; undefined
+        let name = "Afif"; // defined
+
+        if (name === undefined) {
+            alert("UNDEFINED");
+        } else {
+            alert("DEFINED")
+        }
+
+        // from array
+        const names = ["afif", "Wijaya"];
+
+        if (names[2] === undefined) {
+            alert("UNDEFINED");
+        } else {
+            alert("DEFINED");
+        }
+
+        // from object property
+        // let person = {};
+        let person = {
+            name: "Afif"
+        };
+
+        if (person.name === undefined) {
+            alert("hello world");
+        } else {
+            alert(`Hello ${person.name}`)
+        }
+    </script>
+</body>
+
+</html>

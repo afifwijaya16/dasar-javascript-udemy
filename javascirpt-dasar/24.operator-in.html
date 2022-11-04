@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator In</title>
+</head>
+
+<body>
+    <script>
+        // pengecekan index bukan value
+        const person = {
+            firstname: "Afif",
+            lastname: "Wijaya"
+        }
+
+        const result = "firstname" in person; //true
+        document.writeln(`<p>${result}</p>`);
+
+        const names = [null, 'Afif wijaya', null]
+
+        const resultNew = 0 in names;
+        document.writeln(`<p>${resultNew}</p>`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>optional chaining</title>
+</head>
+
+<body>
+    <script>
+        // operator chaining = operator yang digunakan untuk mengamankan ketika kita ingin mengakses property sebuah object dari data nullish
+
+        // error property nullish
+
+        // let personError = {};
+
+        // let countryError = personError.address.countryError;
+        // document.writeln(`<p>${countryError}</p>`);
+
+        // with property nullish
+
+        let person = {};
+
+        let country = person?.address?.country;
+
+        document.writeln(`<p>${country}</p>`);
+
+        let personNew = {
+            address: {
+                country2: "Indonesia"
+            }
+        };
+
+        let country2 = personNew?.address?.country2;
+
+        document.writeln(`<p>${country2}</p>`);
+    </script>
+</body>
+
+</html>

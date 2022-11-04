@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenary Operator</title>
+</head>
+
+<body>
+    <script>
+        // tanpa tenary operator
+        const nilai = 75;
+        let ucapan;
+
+        if (nilai >= 75) {
+            ucapan = "selamat anda lulus";
+        } else {
+            ucapan = "silahkan coba lagi";
+        }
+
+        document.writeln(`<p>${ucapan}</p>`);
+
+        // tenary operator
+
+        const nilai2 = 69;
+        const ucapan2 = nilai2 >= 70 ? "Selamat anda lulus" : "silahkan coba lagi";
+
+        document.writeln(`<p>${ucapan2}</p>`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nullish coalescing operator</title>
+</head>
+
+<body>
+    <script>
+        // nullish value = null/undefined
+
+        // tanpa nullish operator
+        let parameter;
+        let data = parameter;
+        if (data === undefined || data === null) {
+            data = "nilai default"
+        }
+        alert(data)
+
+        // nullish operator
+        let parameter2 = "afif";
+        let data2 = parameter2 ?? "Nilai default"
+
+        document.writeln(`<p>${data2}</p>`);
+    </script>
+</body>
+
+</html>

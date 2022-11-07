@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika di Non Boolean</title>
+</head>
+
+<body>
+    <script>
+        // operator or || di non boolean
+        // dari kiri ke kanan
+        // nilai pertama yang diambil = truthy
+        // jika tidak ada truthy, nilai akhir yang di ambil
+        console.log("----------OR---------");
+        console.log("hello" || ''); //hello
+        console.log("" || []); //[]
+        console.log("0" || "Nol"); // 0
+        console.log(0 || "Nol"); // Nol
+        console.log(null || "Null"); // Null
+        console.log(undefined || "Undefined"); // Undefined
+        console.log("---------------------");
+
+        // operator or && di non boolean
+        // dari kiri ke kanan
+        // nilai pertama yang diambil = false
+        // jika tidak ada false, nilai akhir yang di ambil
+        console.log("---------AND---------");
+        console.log("hello" && ''); //''
+        console.log("" && []); //""
+        console.log("0" && "Nol"); // Nol
+        console.log(0 && "Nol"); // 0
+        console.log(null && "Null"); // null
+        console.log(undefined && "Undefined"); // undefined
+        console.log("undefined" && "null"); // null
+        console.log("---------------------");
+    </script>
+</body>
+
+</html>

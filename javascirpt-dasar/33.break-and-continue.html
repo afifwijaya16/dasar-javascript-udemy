@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break and continue</title>
+</head>
+
+<body>
+    <script>
+        // break = berhenti
+        // pada switch case = break menghentikan case
+        // pada perulangna = break menghentikan seluruh perulangna
+        // continue = menghentikan perulangan saat ini, lalu melanjutkan perulangan selanjutnya
+
+        // kode break
+        document.writeln(`<p>-------Perulangan----------`);
+        let counterBreak = 1;
+        while (true) {
+            document.writeln(`<p>Perulangan ke ${counterBreak}</p>`);
+            counterBreak++;
+
+            if (counterBreak > 10) {
+                break;
+            }
+        }
+
+        // kode continue ganjil
+        document.writeln(`<p>-------Perulangan ganjil----------`);
+        for (let i = 1; i < 10; i++) {
+            if (i % 2 === 0) {
+                continue;
+            }
+            document.writeln(`<p>Perulangan ganjil ${i}</p>`);
+        }
+
+        // kode continue genap
+        document.writeln(`<p>-------Perulangan genap----------`);
+        for (let i = 1; i < 10; i++) {
+            if (i % 2 !== 0) {
+                continue;
+            }
+            document.writeln(`<p>Perulangan genap ${i}</p>`);
+        }
+    </script>
+</body>
+
+</html>

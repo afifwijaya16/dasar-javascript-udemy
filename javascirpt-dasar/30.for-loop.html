@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop</title>
+</head>
+
+<body>
+    <script>
+        // for loop = perulangan
+
+        // for(init statement; kondisi; post statement) {
+        // block perulangan
+        // }
+
+        // init statement = dieksekusi diawal
+        // kondisi = pengecekan perulangan,
+        // post statement = diekeskusi setiap akhir perulangan
+
+        // kode perulangan tanpa henti
+        // for (; ;) {
+        //     alert("hallo")
+        // }
+
+        // kode perulangan dengan kondisi
+        let counter = 1;
+        for (; counter <= 10;) {
+            document.writeln(`<p>Perulangan ke ${counter}</p>`);
+            counter++;
+        }
+
+        // kode perulangan dengan init statement
+        for (let counterNew = 1; counterNew <= 10;) {
+            document.writeln(`<p>Perulangan New ke ${counterNew}</p>`);
+            counterNew++;
+        }
+
+        // kode perulangan dengan post statement
+        for (let counterPost = 1; counterPost <= 5; counterPost++) {
+            document.writeln(`<p>Perulangan counter Post ${counterPost}</p>`);
+        }
+    </script>
+</body>
+
+</html>

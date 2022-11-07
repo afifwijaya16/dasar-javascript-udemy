@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in</title>
+</head>
+
+<body>
+    <script>
+        // for in = perulangan for yang digunakan untuk mengiterasikan seluruh data property di object atau index di array
+        // for in tidak direkom untuk array.
+
+        // object
+        const person = {
+            firstName: "Afif",
+            lastName: "Wijaya"
+        };
+
+        for (const property in person) {
+            document.writeln(`<p>Property ${property} : ${person[property]}</p>`);
+        }
+
+        // array
+        const names = ["Afif", "Wijaya"];
+
+        for (const index in names) {
+            document.writeln(`<p>index ${index} : ${names[index]}</p>`);
+        }
+    </script>
+</body>
+
+</html>

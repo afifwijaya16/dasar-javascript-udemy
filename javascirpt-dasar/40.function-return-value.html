@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function return value</title>
+</head>
+
+<body>
+    <script>
+        // make function dengan parameter dan return value
+        function sayHello(firstName, lastName) {
+            const say = `Hello ${firstName} ${lastName}`
+            return say;
+        }
+
+        // call function and return value
+        const result = sayHello("Afif", "Wijaya");
+
+        document.writeln(`<p>${result}</p>`);
+
+
+        function getFinalScore(value) {
+            if (value >= 90) {
+                return "A";
+            } else if (value >= 80) {
+                return "B";
+            } else if (value >= 70) {
+                return "C";
+            } else if (value >= 60) {
+                return "D";
+            } else {
+                return "E";
+            }
+        }
+
+        const resultScore = getFinalScore(80);
+
+        document.writeln(`<p>Hasil final score : ${resultScore}</p>`);
+
+        // menghentikan eksekusi dengan return
+
+        function isConstains(array, searchValue) {
+            for (const element of array) {
+                console.log(`iterasi element ${element}`);
+                if (element === searchValue) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        console.log(isConstains([1, 2, 3, 4, 5, 6, 7, 8, 9], 44));
+        const array = [1, 2, 3, 4, 3, 2, 7, 8, 9];
+        const search = 2;
+        const resultConstain = isConstains(array, search);
+        document.writeln(`<p>isConstains : ${resultConstain}</p>`);
+    </script>
+</body>
+
+</html>

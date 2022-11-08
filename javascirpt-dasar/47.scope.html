@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+</head>
+
+<body>
+    <script>
+        // scope = akses sebuah data
+        // jenis= global dan local
+
+        // global
+        let counter = 0;
+
+        function hitMe() {
+            // local
+            counter++;
+        }
+
+        hitMe();
+        hitMe();
+        hitMe();
+
+        console.log(counter)
+
+
+        console.log("----------------");
+        // local scope
+        function first() {
+            let firstVariable = "first";
+        }
+
+        function second() {
+            let secondVariable = "second";
+        }
+
+        first();
+        second();
+
+        // console.log(firstVariable); // error because local scope
+        // console.log(secondVariable);// error because local scope
+
+        console.log("----------------");
+        // nested function scope
+        function firstNest() {
+            let firstVariable = "First";
+
+            function secondNest() {
+                console.log(firstVariable);
+            }
+
+            secondNest();
+        }
+
+        firstNest();
+
+
+    </script>
+</body>
+
+</html>

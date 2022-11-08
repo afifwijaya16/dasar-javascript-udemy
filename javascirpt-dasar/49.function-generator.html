@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function generator</title>
+</head>
+
+<body>
+    <script>
+        // data generator yang bisa di interasi seperti array
+
+        // function generator sederhana 
+        function* createNames() {
+            yield "Afif";
+            yield "Wijaya";
+            yield "Empires";
+            yield "FJ";
+        }
+
+        const names = createNames();
+        console.log(names);
+        for (const name of names) {
+            console.log(name)
+        }
+
+        console.log("----------------");
+
+        // function generator kompleks
+        function* buatGanjil(value) {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    yield i;
+                }
+            }
+        }
+
+        const angkaGanjil = buatGanjil(100);
+        for (const angka of angkaGanjil) {
+            console.log(angka)
+        }
+
+        console.log("----------------");
+        // lazy evaluation
+        function* buatGenap(value) {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 !== 1) {
+                    console.log(`yield ${i}`);
+                    yield i;
+                }
+            }
+        }
+
+        const angkaGenap = buatGenap(10);
+        for (const angka of angkaGenap) {
+            console.log(angka)
+        }
+
+        console.log("----------------");
+        // igger
+        function* buatGenapArray(value) {
+            const result = [];
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 !== 1) {
+                    console.log(`yield ${i}`);
+                    result.push(i)
+                }
+            }
+            return result;
+        }
+
+        console.log(buatGenapArray(10));
+        const angkaGenapArray = buatGenapArray(10);
+        for (const number of angkaGenapArray) {
+            console.log(number)
+        }
+    </script>
+</body>
+
+</html>

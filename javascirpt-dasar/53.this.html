@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+
+<body>
+    <script>
+        // kata kunci = referensi ke object milik siapa
+
+        // global scope
+        console.log(this); //window
+
+        // function 
+        function sample() {
+            console.log(this);//window
+            // function 
+            function nested() {
+                console.log(this);//window
+            }
+            nested()
+        }
+        sample()
+
+        // object
+        const person = {
+            name: "Afif",
+            sayHello: function (value) {
+                console.log(this);
+                console.log(`hello ${value}. my name is ${this.name}`);
+                // this.name = person.name
+            }
+        }
+
+        person.sayHello("wijaya")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <script>
+        // closure = kombinasi function dan bundel referensi ke data disekitarnya
+        function createAdd(value) {
+            const owner = "afif";
+            function add(param = 0) {
+                console.log(owner);
+                return value + param;
+            }
+            return add;
+        }
+
+        const addTwo = createAdd(2);
+        console.log(addTwo(20))
+        // function addTwo(param) {
+        //     console.log(param)
+        //     return 20 * 2
+        // }
+    </script>
+</body>
+
+</html>

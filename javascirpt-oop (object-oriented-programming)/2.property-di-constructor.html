@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property di contructor</title>
+</head>
+
+<body>
+    <script>
+        function Person() {
+            this.firstName = "";
+            this.lastName = "";
+        }
+
+        const afif = new Person();
+        const wijaya = new Person();
+        console.log(afif); //default
+        wijaya.firstName = "wijaya"; //with edit
+        afif.firstName = "afif"; //with edit
+        afif.address = "jalan cemara"; //with edit
+        console.log(wijaya); //default
+        console.log(afif);
+
+    </script>
+</body>
+
+</html>

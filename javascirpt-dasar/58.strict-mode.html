@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strict </title>
+</head>
+
+<body>
+    <script>
+        // default javascript yang dijalankan = sloppy mode
+
+        // kode strict mode
+        function useStrictMode() {
+            'use strict';
+            const person = {
+                firstName: "afif"
+            }
+            // error
+            // with (person) {
+            //     console.log(firstName)
+            // }
+        }
+
+        useStrictMode()
+    </script>
+</body>
+
+</html>

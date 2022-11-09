@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring</title>
+</head>
+
+<body>
+    <script>
+        // destructuring = membongkar value2 diarray/diobject ke dalam variable2
+
+        { // mengambil data di array
+            console.log("-------destructuring array--------");
+            const names = ['afif', 'wijaya'];
+            const firstName = names[0];
+            const lastName = names[1];
+
+            console.log(firstName);
+            console.log(lastName);
+
+            // destructuring array
+            const namesArray = ['afif', 'wijaya', 'fj', 'awi'];
+
+            const [firstNameArray, lastNameArray, ...others] = namesArray;
+
+            console.log(firstNameArray)
+            console.log(lastNameArray)
+            console.log(others)
+        }
+
+
+        {
+            console.log("-------destructuring object--------");
+
+            const person = {
+                firstName: "afif",
+                lastName: "Wijaya",
+                address: {
+                    street: "Jalana cemara",
+                    city: "Lampung",
+                    country: "Indonesia"
+                },
+                hobby: "game"
+            }
+
+            const firstNamePerson = person.firstName
+            const lastNamePerson = person.lastName
+
+            const { firstName, lastName, address: { street, city }, ...others } = person;
+
+            console.log(firstName)
+            console.log(lastName)
+            //console.log(address) // tidak bisa karena sudah di nested
+            console.log(street)
+            console.log(city)
+            console.log(others)
+        }
+
+        {
+            console.log("-------destructuring di function parameter 1--------");
+
+            function displayPerson({ firstName, lastName }) {
+                console.log(firstName);
+                console.log(lastName);
+            };
+
+            const person = {
+                firstName: "Afif",
+                lastName: "Wijaya"
+            }
+
+            displayPerson(person)
+        }
+        {
+            console.log("-------destructuring di function parameter 2--------");
+
+            function sum([first, second]) {
+                return first + second;
+            }
+
+            console.log([10, 12]);
+            console.log(sum([10, 12]));
+        }
+        {
+            console.log("-------destructuring default value array--------");
+
+            const names = ['afif', 'wijaya'];
+            const [firstName, lastName, address = "Jalan cemara"] = names;
+
+            console.log(firstName)
+            console.log(address)
+        }
+        {
+            console.log("-------destructuring default value object--------");
+
+            const person = {
+                firstName: "afif"
+            };
+            const { firstName, lastName = "Wijaya", address = "Jalan cemara" } = person;
+
+            console.log(firstName)
+            console.log(lastName)
+            console.log(address)
+        }
+
+        {
+            console.log("-------destructuring menggunakan nama variable lain--------");
+
+            const person = {
+                firstName: namaDepan = "afif"
+            };
+            const { firstName, lastName = "Wijaya", address = "Jalan cemara" } = person;
+
+            console.log(namaDepan)
+            console.log(lastName)
+            console.log(address)
+        }
+    </script>
+</body>
+
+</html>

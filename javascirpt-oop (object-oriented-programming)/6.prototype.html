@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+
+<body>
+    <script>
+        // have propotype
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        // kode instance
+        const afif = new Person("afif", "Wijaya");
+
+        console.log(afif)
+
+        const wijaya = new Person('fj', 'wijaya');
+
+        wijaya.sayBye = function () {
+            console.log("good bye")
+        }
+        // menambah property ke instance object 
+        Person.prototype.sayBye = function () {
+            console.log("good bye");
+        }
+
+        console.log(wijaya);
+
+        Person.prototype.run = function () {
+            console.log(`${this.firstName} is running`);
+        }
+
+        wijaya.sayBye()
+        wijaya.run();
+    </script>
+</body>
+
+</html>

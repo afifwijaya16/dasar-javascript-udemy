@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Inheritance</title>
+</head>
+
+<body>
+    <script>
+        // tidak direkomendasikan lagi praktek menggunakan oop prototype
+
+        function Employee(name) {
+            this.name = name;
+        }
+
+        function Manager(name) {
+            this.name = name;
+        }
+
+        // Manager.prototype = Employee.prototype; //salah
+        Manager.prototype = Object.create(Employee.prototype);
+
+        Manager.prototype.sayHello = function (name) {
+            console.log(`hello ${name}, my name is 
+            Manager ${this.name}`);
+        }
+
+        Employee.prototype.sayHello = function (name) {
+            console.log(`hello ${name}, my name is Employee ${this.name}`);
+        }
+
+        const employee = new Employee("afif");
+        employee.sayHello("wijaya")
+
+        const manager = new Manager("fj");
+        manager.sayHello("wijaya")
+
+        console.log(employee)
+        console.log(manager)
+
+    </script>
+</body>
+
+</html>

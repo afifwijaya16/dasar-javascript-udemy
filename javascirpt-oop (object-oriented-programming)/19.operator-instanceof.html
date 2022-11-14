@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator instanceof</title>
+</head>
+
+<body>
+    <script>
+        {
+            // pengecekan sebuah object 
+            // oeprator instance of menghasilkan boolean
+            class Employee {
+
+            }
+
+            class Manager {
+
+            }
+
+            const afif = new Employee();
+            const wijaya = new Manager();
+
+            console.log(typeof afif);
+            console.log(typeof wijaya);
+
+            console.log(afif instanceof Employee); //true
+            console.log(afif instanceof Manager); //false
+            console.log(wijaya instanceof Employee); //false
+            console.log(wijaya instanceof Manager); //true
+        }
+        console.log('----------------------')
+        {
+            // operator instanceof di class inheritance
+            class Employee {
+
+            }
+
+            class Manager extends Employee {
+
+            }
+
+            const afif = new Employee();
+            const wijaya = new Manager();
+
+            console.log(typeof afif);
+            console.log(typeof wijaya);
+
+            console.log(afif instanceof Employee); //true
+            console.log(afif instanceof Manager); //false
+            // tur karena manager adalah turunan dari employee
+            console.log(wijaya instanceof Employee); //true
+            console.log(wijaya instanceof Manager); //true
+        }
+    </script>
+</body>
+
+</html>

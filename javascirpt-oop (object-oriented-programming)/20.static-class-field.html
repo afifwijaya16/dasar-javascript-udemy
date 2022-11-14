@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static class field</title>
+</head>
+
+<body>
+    <script>
+        class Configuration {
+            static name = "belajar javacript dasar";
+            static version = 1.0;
+            static author = "afif wijaya";
+
+        }
+
+        const config = new Configuration();
+        console.log(config);
+        // untuk mengakses static class field
+        console.log(Configuration.name);
+        console.log(Configuration.version);
+        console.log(Configuration.author);
+
+    </script>
+</body>
+
+</html>

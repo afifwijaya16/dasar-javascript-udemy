@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reqexp</title>
+</head>
+
+<body>
+    <script>
+        {
+            const regex1 = /[a]/;
+            const regex2 = new RegExp("[a]");
+            const regex3 = new RegExp(/[a]/);
+        }
+        {
+            console.log("----- regex instant method----")
+            const name = "afif Wijaya";
+            const regex = /afif/;
+
+            let result = regex.exec(name);
+            console.log(result);
+
+            let test = regex.test(name);
+            console.log(test);
+        }
+        {
+            console.log("----- regex modifier----");
+
+            const name = "afif wijaya \nwijaya afif\nafif lampung";
+            const regex1 = /afif/g;
+            const regex2 = /wijaya/ig;
+
+            let result;
+            while ((result = regex1.exec(name)) !== null) {
+                console.log(result)
+            }
+
+            while ((result = regex2.exec(name)) !== null) {
+                console.log(result);
+            }
+        }
+        {
+            console.log("----regular expression distring ----");
+
+            const string = "afif wijaya afaf afuf afef afof afif";
+
+            console.log(string.match(/af[aiueo]f/ig)); //['afif', 'afaf', 'afuf', 'afef', 'afof', 'afif']
+            console.log(string.search(/af[aiueo]f/ig)) // 0
+            console.log(string.replace(/af[aiueo]f/ig, 'keren')) // keren wijaya keren keren keren keren keren
+            console.log(string.replaceAll(/af[aiueo]f/ig, 'keren')) // keren wijaya keren keren keren keren keren
+            console.log(string.split(/e/ig)) // ['afif wijaya afaf afuf af', 'f afof afif']
+        }
+
+
+    </script>
+</body>
+
+</html>

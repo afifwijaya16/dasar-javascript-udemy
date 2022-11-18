@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode</title>
+</head>
+
+<body>
+    <script>
+        {
+            console.log("----encodeURI dan devodeURI---");
+
+            const url = 'http://www.contoh.com/?name= afif wijaya menggala';
+
+            console.log(url);
+            const encode = encodeURI(url);
+            console.log((encode));
+            const decode = decodeURI(encode)
+            console.log(decodeURI(decode));
+        }
+
+        {
+            console.log("---encodeURIComponent dan decodeURIComponent----");
+
+            const value = "Afif&Wijaya=Wijaya"
+            const url = "http://www.contoh.com/?name=";
+
+            const encode = encodeURIComponent(value);
+            console.log(url + encode);
+
+            const decode = decodeURIComponent(encode);
+            console.log(url + decode)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>export default</title>
+</head>
+
+<body>
+    <script type="module">
+        // export
+        // export default namaFunction;
+        // export default function(){...};
+        // export default namaVariable;
+        // export default namaVariable = value;
+        // export default NamaClass;
+        // export default class {...}
+
+        // import
+        // import aliasFunction from "./module-dafault.js"
+        // import { default as aliasVariable} from "./module-dafault.js"
+        // import aliasVariable from "./module-dafault.js"
+        // import aliasClass from "./module-dafault.js"
+        // import {default as aliasClass} from "./module-dafault.js"
+
+        // import sayHello from './script/9-export-module.js';
+
+        // function
+        // sayHello("afif") 
+
+        // class
+        // const person = new sayHello("afif")
+        // person.sayHi()
+
+        import authorName, { title, content } from './script/9-export-module.js';
+
+
+        console.log(title);
+        console.log(content);
+        console.log(authorName)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic module loading</title>
+</head>
+
+<body>
+
+
+    <!-- 1 module -->
+    <script type="module">
+        // dynamic module loading = load module ketika dibutuhkan 
+
+        // import { alertHello } from './script/12-dynamic-module-loading.js';
+
+        // alertHello("afif");
+
+    </script>
+
+    <!-- 2 dynamic module -->
+    <label>Name</label>
+    <input type="text" id="name">
+    <input type="button" value="say" id="sayButton">
+    <script type="module">
+        document.getElementById("sayButton").onclick = function () {
+            import("./script/12-dynamic-module-loading.js").then(module => {
+                const name = document.getElementById("name").value;
+                module.alertHello(name);
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>named node map</title>
+</head>
+
+<body>
+    <img id="logo" src="https://static.wikia.nocookie.net/vsbattles/images/8/82/Omegamon_tri.png" alt="image digimon">
+
+    <script>
+        const logo = document.getElementById("logo");
+        const attributes = logo.attributes
+
+        for (let attribute of attributes) {
+            console.log(`${attribute.name} : ${attribute.value}`)
+        }
+    </script>
+
+</body>
+
+</html>

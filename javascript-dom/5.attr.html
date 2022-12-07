@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+</head>
+
+<body>
+    <img id="logo" src="https://static.wikia.nocookie.net/vsbattles/images/8/82/Omegamon_tri.png" alt="image digimon">
+
+    <script>
+        const logo = document.getElementById("logo");
+        const src = logo.getAttributeNode("src");
+
+        console.log(src.name);
+        console.log(src.value)
+    </script>
+
+    <!-- attr value -->
+    <script>
+        const src1 = logo.getAttribute("src");
+        console.log(src1);
+    </script>
+
+    <!-- membuat attr -->
+    <img alt="logo new" id="logoNew" width="100">
+
+    <script>
+        const logoNew = document.getElementById("logoNew");
+
+        const srcNew = document.createAttribute('src');
+        srcNew.value = "https://www.freepnglogos.com/uploads/new-balance-png-logo/new-balance-logo-png-white-0.png"
+
+        logoNew.setAttributeNode(srcNew)
+    </script>
+
+
+</body>
+
+</html>

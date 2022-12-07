@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element</title>
+</head>
+
+<body>
+    <!-- element code -->
+    <h1 id="title"></h1>
+    <p id="description"></p>
+
+    <script>
+        const title = document.getElementById("title");
+        title.textContent = "Belajar Javascirpt DOM";
+
+        const description = document.getElementById('description');
+        description.textContent = "Selamat belajar Javascript DOM";
+    </script>
+
+    <!-- element property -->
+    <div class="content" id="content">
+        <h1 class="title" id="title">this is title</h1>
+        <p id="description" class="description">this is description</p>
+    </div>
+
+
+    <script>
+        const content = document.getElementById("content");
+        console.log(content.id)
+        console.log(content.className)
+        console.log(content.tagName)
+    </script>
+
+    <!-- element method -->
+    <div class="content1" id="content1">
+        <h1 class="title1" id="title1">this is title1</h1>
+        <p id="description1" class="description1">this is description1</p>
+    </div>
+
+
+    <script>
+        const title1 = document.getElementById("title1");
+        const description1 = document.getElementById("description1");
+        title1.remove()
+        description1.remove()
+    </script>
+
+    <!-- make element -->
+    <div class="content2" id="content2"></div>
+
+    <script>
+        const content2 = document.getElementById("content2");
+        const title2 = document.createElement("h1")
+        title2.textContent = "Belajar javascript dom create element"
+        content2.appendChild(title2)
+
+        const description2 = document.createElement("p");
+        description2.textContent = "Selamat Belajar javascript Dom membuat element";
+        content2.appendChild(description2)
+    </script>
+</body>
+
+</html>

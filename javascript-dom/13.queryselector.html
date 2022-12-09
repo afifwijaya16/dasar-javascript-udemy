@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>query selector</title>
+</head>
+
+<body>
+
+    <ul>
+        <li class="menuItem">1</li>
+        <li id="menu2" class="menuItem2">2</li>
+        <li class="menuItem">3</li>
+    </ul>
+    <script>
+        /* universal */
+        const elements = document.querySelectorAll("*");
+        console.log(elements);
+
+        /* type selector */
+        const elementSelector = document.querySelectorAll("li");
+        console.log(elementSelector)
+
+        /* class selector */
+        const elementClass = document.querySelectorAll(".menuItem");
+        console.log(elementClass)
+
+        /* id selector */
+        const elementId = document.querySelectorAll("#menu2");
+        console.log(elementId);
+
+        /* atribute selector */
+        const elementAttSelector = document.querySelectorAll("[class]");
+        console.log(elementAttSelector)
+    </script>
+</body>
+
+</html>

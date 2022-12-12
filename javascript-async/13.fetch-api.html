@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch API</title>
+</head>
+
+<body>
+    <form>
+        <label for="username">Username:
+            <input type="text" id="username" name="username" value="kminchelle">
+        </label>
+        <br>
+        <label for="password">Password:
+            <input type="password" id="password" name="password" value="0lelplR">
+        </label>
+        <br>
+        <input type="button" id="login" value="Login">
+    </form>
+    <h1 id="response"></h1>
+    <script>
+
+        function doLogin() {
+            const request = new Request("https://dummyjson.com/auth/login", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: document.getElementById("username").value,
+                    password: document.getElementById("password").value
+                })
+            });
+
+            // Promise<Response>
+            const response = fetch(request);
+            response
+                .then((response) => response.json())
+                .then(function (json) {
+                    document.getElementById("response").textContent = json.username;
+                })
+                .catch(function (error) {
+                    document.getElementById("response").textContent = error;
+                })
+
+        }
+
+        document.getElementById("login").onclick = doLogin;
+
+    </script>
+</body>
+
+</html>

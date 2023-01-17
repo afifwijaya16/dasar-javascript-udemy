@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+
+<body>
+    <script>
+        const set = new Set([1, 2, 3]);
+        set.add(4);
+        console.log(set.has(4))
+        set.delete(3);
+        console.log(set.size);
+        set.clear()
+        for (const item of set) {
+            console.log(item)
+        }
+    </script>
+</body>
+
+</html>

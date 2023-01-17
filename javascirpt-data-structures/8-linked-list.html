@@ -30,7 +30,7 @@
             }
 
             isEmpty() {
-                return this.zie === 0;
+                return this.size === 0;
             }
             getSize() {
                 return this.size;
@@ -45,6 +45,84 @@
                     this.head = node;
                 }
                 this.size++
+            }
+
+            append(value) {
+                const node = new Node(value);
+                if (this.isEmpty()) {
+                    this.head = node
+                } else {
+                    let prev = this.head;
+                    while (prev.next) {
+                        prev = prev.next;
+                    }
+                    prev.next = node;
+                }
+                this.size++
+            }
+
+            insert(value, index) {
+                if (index < 0 || index > this.size) {
+                    return
+                }
+
+                if (index === 0) {
+                    this.prepend(value);
+                } else {
+                    const node = new Node(value);
+                    let prev = this.head;
+                    for (let i = 0; i < index - 1; i++) {
+                        prev = prev.next;
+                    }
+                    node.next = prev.next;
+                    prev.next = node;
+                    this.size++;
+                }
+            }
+
+            removeFrom(index) {
+                if (index < 0 || index >= this.size) {
+                    return null;
+                }
+
+                let removeNode;
+                if (index === 0) {
+                    removeNode = this.head;
+                    this.head = this.head.next;
+                } else {
+                    let prev = this.head;
+                    for (let i = 0; i < index - 1; i++) {
+                        prev = prev.next
+                    }
+                    removeNode = prev.next;
+                    prev.next = removeNode.next;
+                }
+                this.size--
+                return removeNode.value
+            }
+
+            removeValue(value) {
+                if (this.isEmpty()) {
+                    return null
+                }
+                let removeNode;
+                if (this.head.value === value) {
+                    this.head = this.head.next;
+                    this.size--;
+                    return value
+                } else {
+                    let prev = this.head;
+                    while (prev.next && prev.next.value !== value) {
+                        prev = prev.next;
+                    }
+                    if (prev.next) {
+                        removeNode = prev.next;
+                        prev.next = removeNode.next;
+                        this.size--;
+                        return value;
+                    }
+                    return null
+                }
             }
 
             print() {
@@ -67,11 +145,37 @@
         console.log(`list is empty?`, list.isEmpty());
         console.log(`list size?`, list.getSize());
 
+        console.log("-----list append-----")
+        const listAppend = new LinkedList();
+        listAppend.append(10);
+        listAppend.append(20);
+        listAppend.append(30);
+
+        listAppend.print();
+
+        console.log("-----list prevend-----")
+        const listPrevend = new LinkedList();
+        listPrevend.prepend(10);
+        listPrevend.prepend(20);
+        listPrevend.prepend(30);
+
+        listPrevend.print();
+
+        console.log("-----list insert-----")
         list.prepend(10);
         list.prepend(20);
         list.prepend(30);
+        list.insert(10, 0);
+        list.print()
 
-        list.print();
+        console.log("-----list remove from array-----")
+        list.removeFrom(0);
+        list.print()
+
+        console.log("-----list remove from value-----")
+        list.print()
+        list.removeValue(30);
+        list.print()
     </script>
 </body>
 

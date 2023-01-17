@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faktorial</title>
+</head>
+
+<body>
+    <script>
+
+        /**
+         * pengertian
+         * Faktorial adalah hasil kali semua bilangan bulat yang ada dibawah bilangan faktorial dengan bilangan itu sendiri.
+         */
+        function faktorial(n) {
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
+                // console.log(`ini jumlah result = ${result} * ${i}`)
+                result = result * i
+            }
+            return result
+        }
+
+        console.log(faktorial(0) + ` faktorial 0`)
+        console.log(faktorial(1) + ` faktorial 1`)
+        console.log(faktorial(2) + ` faktorial 2`)
+        console.log(faktorial(3) + ` faktorial 3`)
+        console.log(faktorial(5) + ` faktorial 5`) //120
+        console.log(faktorial(10) + ` faktorial 10`)
+    </script>
+</body>
+
+</html>

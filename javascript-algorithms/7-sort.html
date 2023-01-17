@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sorting algorithms</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * Bubble Sort adalah metode pengurutan algoritma dengan cara melakukan penukaran data secara terus menerus sampai bisa dipastikan dalam suatu iterasi tertentu tidak ada lagi perubahan/penukaran. Algoritma ini menggunakan perbandingan dalam operasi antar elemennya.
+         */
+        console.log('----- bubble sort -------')
+        function bubbleSort(arr) {
+            let swapped
+            do {
+                swapped = false;
+                for (let i = 0; i < arr.length - 1; i++) {
+                    if (arr[i] > arr[i + 1]) {
+                        let temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped)
+        }
+
+        const arrBubbleSort = [8, 20, -2, 4, -6];
+        bubbleSort(arrBubbleSort);
+        console.log(arrBubbleSort) // [-6,-2, 4, 8, 20]
+        /**
+         * Algoritma insertion sort merupakan suatu metode pengurutan data dengan melakukan penempatan setiap elemen data pada posisinya dengan membandingkan dengan data-data yang telah ada.
+         */
+        console.log('----- insert sort -------')
+        function insertSort(arr) {
+            for (let i = 1; i < arr.length; i++) {
+                let numberToInsert = arr[i]
+                let j = i - 1;
+                while (j >= 0 && arr[j] > numberToInsert) {
+                    arr[j + 1] = arr[j];
+                    j = j - 1;
+                }
+                arr[j + 1] = numberToInsert
+            }
+        }
+
+        const arrInsertSort = [8, 20, -2, 4, -6];
+        insertSort(arrInsertSort);
+        console.log(arrInsertSort) // [-6,-2, 4, 8, 20]
+
+        /**
+         * Algortima QuickSort merupakan algoritma untuk mengurutkan data dengan pendekatan rekursif. Proses pengurutan dilakukan dengan memecah kumpulan data menjadi dua bagian berdasarkan nilai pivot yang dipilih.  Pada prinsipnya nilai pivot yang dipilih ini akan ditempatkan pada posisinya disetiap akhir proses partisi.  Setelah proses partisi selesai dan menempatkan pivot pada posisinya yang tepat maka proses pengurutan dilanjutkan secara rekursif untuk mengurutkan data bagian kiri dari pivot dan bagian kanan dari pivot tersebut.
+         */
+        console.log('----- quick sort -------');
+        function quickSort(arr) {
+            if (arr.length < 2) {
+                return arr;
+            }
+            let pivot = arr[arr.length - 1];
+            let left = [];
+            let right = [];
+
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] < pivot) {
+                    left.push(arr[i]);
+                } else {
+                    right.push(arr[i]);
+                }
+            }
+            return [...quickSort(left), pivot, ...quickSort(right)]
+        }
+
+        const arrQuickSort = [8, 20, -2, 4, -6];
+        console.log(quickSort(arrQuickSort)) // [-6,-2, 4, 8, 20]
+
+        /**
+         * Merge Sort adalah algoritma pengurutan menggunakan divide conquer yaitu dengan cara memecah kemudian menyelesaikan setiap bagian- bagian pecahanya tadi kemudian digabungkan kembali
+         */
+        console.log('----- merge sort -------');
+
+        function mergeSort(arr) {
+            if (arr.length < 2) {
+                return arr;
+            }
+            const mid = Math.floor(arr.length / 2);
+            const leftArr = arr.slice(0, mid);
+            const rightArr = arr.slice(mid);
+
+            return merge(mergeSort(leftArr), mergeSort(rightArr));
+        }
+
+        function merge(leftArr, rightArr) {
+            const sortedArr = [];
+            while (leftArr.length && rightArr.length) {
+                if (leftArr[0] < rightArr[0]) {
+                    sortedArr.push(leftArr.shift());
+                } else {
+                    sortedArr.push(rightArr.shift())
+                }
+            }
+            return [...sortedArr, ...leftArr, ...rightArr];
+        }
+
+        const mergetSort = [8, 20, -2, 4, -6];
+        console.log(mergeSort(mergetSort)) // [-6,-2, 4, 8, 20]
+    </script>
+</body>
+
+</html>

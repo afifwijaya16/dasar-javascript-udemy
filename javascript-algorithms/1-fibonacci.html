@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci</title>
+</head>
+
+<body>
+    <script>
+
+        /**
+         * pengertian
+         * Fibonacci Sequence (Deret angka Fibonacci) adalah deret angka yang diperoleh dengan menjumlahkan dua angka sebelumnya
+         */
+        function fibonacci(n) {
+            const fib = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2]
+            }
+            return fib
+        }
+
+        console.log(fibonacci(2))
+        console.log(fibonacci(3))
+        console.log(fibonacci(7))
+        console.log(fibonacci(10))
+    </script>
+</body>
+
+</html>

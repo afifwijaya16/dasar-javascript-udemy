@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of hanoi</title>
+</head>
+
+<body>
+    <script>
+        /* Menara Hanoi adalah sebuah permainan matematis atau teka-teki. Permainan ini terdiri dari tiga tiang dan sejumlah cakram dengan ukuran berbeda-beda yang bisa dimasukkan ke tiang mana saja. Permainan dimulai dengan cakram-cakram yang tertumpuk rapi berurutan berdasarkan ukurannya dalam salah satu tiang, cakram terkecil diletakkan teratas, sehingga membentuk kerucut. */
+
+        function towerOfHanoi(n, fromRod, toRod, usingRod) {
+            if (n === 1) {
+                console.log(`move disk 1 from ${fromRod} to ${toRod}`)
+                return
+            }
+
+            towerOfHanoi(n - 1, fromRod, usingRod, toRod);
+            console.log(`move disk ${n} from ${fromRod} to ${toRod}`);
+
+            towerOfHanoi(n - 1, usingRod, toRod, fromRod);
+        }
+
+        towerOfHanoi(3, 'A', 'C', "B");
+    </script>
+</body>
+
+</html>

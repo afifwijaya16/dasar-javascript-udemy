@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+</head>
+
+<body>
+    <!-- linier search -->
+    <script>
+        /**
+         * Linear Search merupakan sebuah teknik pencarian data dengan menelusuri semua data satu per satu. Apabila ditemukan kecocokan data maka program akan mengembalikan output, jika tidak pencarian akan terus berlanjut hingga akhir dari array tersebut. Algoritma ini tidak cocok untuk set data dengan jumlah besar karena kompleksitas dari algorithma ini adalah Ο(n) di mana n adalah jumlah item. Jika data yang dicari berada pada paling akhir dari array, maka program harus menelusuri semua array terlebih dahulu.
+         */
+        console.log(`------Linier search ---------`);
+        function linierSearch(arr, target) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === target) {
+                    return i
+                }
+            }
+            return -1
+        }
+        const array = [-5, 2, 10, 4, 6]
+        console.log(linierSearch(array, 10)); //2
+        console.log(linierSearch(array, 6)); //6
+        console.log(linierSearch(array, 20)); //-1
+
+
+        /**
+         * Binary Search merupakan sebuah teknik pencarian data dengancara berulang kali membagi separuh dari jumlah data yang dicari sampai sehingga memperkecil lokasi pencarian menjadi satu data. Dengan teknik ini kita akanmembuang setengah dari jumlah data. Apabila ditemukan kecocokan data maka program akan mengembalikan output, jika tidak pencarian akan terus berlanjut hingga akhir dari pembagian jumlah data tersebut. Algotihma ini biasanya banyak digunakan untuk mencari di program dengan jumlah data yang banyak, dimana kompleksitas dari algorithma ini adalah Ο(log n) di mana n adalah jumlah item. Pada saat menggunakan binary search, data yang berada di dalam array harus diurutkan terlebih dahulu.Misalkan kita memiliki int arr[] = {70, 60, 30, 50, 40,20}, data para int arr harus diurutkan terlebih dahulu menggunakan teknik sorting seperti bubble sort. Sehingga array kita akan menjadi int arr[] = {20,30,40,50,60,70}.
+         */
+
+        console.log(`------binary search ---------`);
+        function binarySearch(arr, target) {
+            let leftIndex = 0;
+            let rightIndex = arr.length - 1;
+
+            while (leftIndex <= rightIndex) {
+
+                let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+
+                if (target === arr[middleIndex]) {
+                    return middleIndex
+                }
+                if (target < arr[middleIndex]) {
+                    rightIndex = middleIndex - 1;
+                } else {
+                    leftIndex = middleIndex + 1;
+                }
+            }
+            return -1;
+        }
+        const arrayBinary = [-5, 2, 4, 6, 10]
+        console.log(binarySearch(arrayBinary, 10)); //4
+        console.log(binarySearch(arrayBinary, 6)); //3
+        console.log(binarySearch(arrayBinary, 20)); //-1
+
+
+        console.log(`-----recursive binary search ----`);
+        function recursiveBinarySearch(arr, target) {
+            return search(arr, target, 0, arr.length, -1)
+        }
+
+        function search(arr, target, leftIndex, rightIndex) {
+            if (leftIndex > rightIndex) {
+                return -1
+            }
+
+            let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+            if (target === arr[middleIndex]) {
+                return middleIndex
+            }
+
+            if (target < arr[middleIndex]) {
+                return search(arr, target, leftIndex, middleIndex - 1)
+            } else {
+                return search(arr, target, middleIndex + 1, rightIndex)
+            }
+        }
+        const arrayRecursiveBinary = [-5, 2, 4, 6, 10]
+        console.log(recursiveBinarySearch(arrayRecursiveBinary, 10)); //4
+        console.log(recursiveBinarySearch(arrayRecursiveBinary, 6)); //3
+        console.log(recursiveBinarySearch(arrayRecursiveBinary, 20)); //-1
+    </script>
+</body>
+
+</html>

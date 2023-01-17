@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime</title>
+</head>
+
+<body>
+    <script>
+
+        /**
+         * pengertian
+         * Bilangan prima merupakan bilangan bulat positif (P>0) yang hanya bisa dibagi bilangan satu dan bilangan itu sendiri.
+         */
+        function isPrime(n) {
+            if (n < 2) {
+                return false
+            }
+            for (let i = 2; i < Math.sqrt(n); i++) {
+                if (n % i === 0) {
+                    return false
+                }
+            }
+            return true
+        }
+
+        console.log(`prime 0 =` + isPrime(0))
+        console.log(`prime 1 =` + isPrime(1))
+        console.log(`prime 2 =` + isPrime(2))
+        console.log(`prime 5 =` + isPrime(5))
+        console.log(`prime 10 =` + isPrime(10))
+        console.log(`prime 19 =` + isPrime(19))
+        console.log(`prime 20 =` + isPrime(20))
+        console.log(`prime 32 =` + isPrime(32))
+    </script>
+</body>
+
+</html>

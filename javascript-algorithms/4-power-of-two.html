@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>power of two</title>
+</head>
+
+<body>
+    <script>
+
+        /**
+         * pengertian
+         * Pangkat dua atau bilangan kuadrat (bahasa Inggris: square) dalam matematika adalah hasil perkalian antara suatu bilangan dengan bilangan itu sendiri atau lebih sederhananya bilangan kuadrat merupakan perkalian berulang.
+         */
+        function isPowerOfTwo(n) {
+            if (n < 1) {
+                return false
+            }
+            while (n > 1) {
+                if (n % 2 !== 0) {
+                    return false
+                }
+                n = n / 2
+            }
+            return true
+        }
+
+        console.log(`power of two 0 =` + isPowerOfTwo(0))
+        console.log(`power of two 1 =` + isPowerOfTwo(1))
+        console.log(`power of two 2 =` + isPowerOfTwo(2))
+        console.log(`power of two 5 =` + isPowerOfTwo(5))
+        console.log(`power of two 10 =` + isPowerOfTwo(10))
+        console.log(`power of two 19 =` + isPowerOfTwo(19))
+        console.log(`power of two 20 =` + isPowerOfTwo(20))
+        console.log(`power of two 32 =` + isPowerOfTwo(32))
+
+        console.log(`-------------------------------`)
+        function isPowerOfTwoBitWise(n) {
+            if (n < 1) {
+                return false
+            }
+
+            return (n & (n - 1)) === 0
+        }
+
+        console.log(`power of two bit wise 0 =` + isPowerOfTwoBitWise(0))
+        console.log(`power of two bit wise 1 =` + isPowerOfTwoBitWise(1))
+        console.log(`power of two bit wise 2 =` + isPowerOfTwoBitWise(2))
+        console.log(`power of two bit wise 5 =` + isPowerOfTwoBitWise(5))
+        console.log(`power of two bit wise 10 =` + isPowerOfTwoBitWise(10))
+        console.log(`power of two bit wise 19 =` + isPowerOfTwoBitWise(19))
+        console.log(`power of two bit wise 20 =` + isPowerOfTwoBitWise(20))
+        console.log(`power of two bit wise 32 =` + isPowerOfTwoBitWise(32))
+    </script>
+</body>
+
+</html>

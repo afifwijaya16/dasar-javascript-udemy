@@ -7,8 +7,10 @@ import HookCounterTwo from "./components/2-hook-counter-two";
 import UseStateWithObject from "./components/3-usestate-with-object";
 import UseStateWithArray from "./components/4-usestate-with-array";
 import UseEffectAfterRender from "./components/5-useEffect-after-render";
-import RunEffectOnlyOnce from "./components/6-run-effect-only-once";
+// import RunEffectOnlyOnce from "./components/6-run-effect-only-once";
 import UseEffectWithCleanup from "./components/7-useEffect-with-cleanup";
+import IntervalHookCounter from "./components/8-interval-hook-counter";
+import FechingDataUseEffect from "./components/9-fetching-data-useEffect";
 
 const App = () => {
   return (
@@ -35,9 +37,15 @@ const App = () => {
         <li>
           <UseEffectAfterRender />
         </li>
-        <li>{/* <RunEffectOnlyOnce /> */}</li>
+        {/* <li><RunEffectOnlyOnce /></li> */}
         <li>
           <UseEffectWithCleanup />
+        </li>
+        <li>
+          <IntervalHookCounter />
+        </li>
+        <li>
+          <FechingDataUseEffect />
         </li>
       </ul>
     </div>

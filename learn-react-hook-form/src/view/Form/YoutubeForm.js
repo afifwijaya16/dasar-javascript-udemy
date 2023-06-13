@@ -44,6 +44,7 @@ const YoutubeForm = () => {
     watch,
     getValues,
     setValue,
+    reset,
   } = form;
 
   const {
@@ -59,6 +60,12 @@ const YoutubeForm = () => {
   } = formState;
 
   console.log({ isSubmitting, isSubmitted, isSubmitSuccessful, submitCount });
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
   const onSubmit = (data) => {
     console.log("form-submit", data);
@@ -262,6 +269,7 @@ const YoutubeForm = () => {
             Submit
           </button>
           <button className="btn btn-sm btn-primary my-2">Submit</button>
+          <button onClick={() => reset()}> Reset</button>
           <button onClick={handleGetValue}> Get Values</button>
           <button onClick={handleSetValue}> Set Values</button>
         </form>
